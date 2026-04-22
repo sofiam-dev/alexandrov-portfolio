@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка — Алексей Александров</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 90mm;
+            height: 50mm;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-front {
+            background: #111111;
+            color: #ffffff;
+        }
+
+        .card-back {
+            background: #ffffff;
+            color: #111111;
+        }
+
+        /* Front side */
+        .front-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .activities {
+            display: flex;
+            gap: 12px;
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .front-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .name-full {
+            font-size: 0.7rem;
+            font-weight: 300;
+            opacity: 0.5;
+            letter-spacing: 0.02em;
+        }
+
+        /* Back side */
+        .back-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.4;
+        }
+
+        .contact-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #111;
+            fill: none;
+        }
+
+        .contact-text {
+            font-size: 0.75rem;
+            color: #333;
+        }
+
+        .contact-text a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .back-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+
+        .city {
+            font-size: 0.6rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .website {
+            font-size: 0.65rem;
+            color: #111;
+            font-weight: 500;
+        }
+
+        .label {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 10mm;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-wrapper">
+        <p class="label">Лицевая сторона</p>
+        <div class="card card-front">
+            <div class="front-top">
+                <span class="logo">Alexandrov</span>
+                <div class="activities">
+                    <span>Арт</span>
+                    <span>Дизайн</span>
+                </div>
+            </div>
+            <div class="front-bottom">
+                <p class="name">Алексей Александров</p>
+                <p class="name-full">Александров Алексей Дмитриевич</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-wrapper">
+        <p class="label">Обратная сторона</p>
+        <div class="card card-back">
+            <div class="back-content">
+                <div class="contact-row">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-text">
+                        <a href="tel:+79037230496">+7 (903) 723 04 96</a>
+                    </span>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </div>
+                    <span class="contact-text">
+                        <a href="mailto:alexey.alexandrov-design@yandex.ru">alexey.alexandrov-design@yandex.ru</a>
+                    </span>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-text">
+                        <a href="https://www.alexandrov-design.com">www.alexandrov-design.com</a>
+                    </span>
+                </div>
+            </div>
+            <div class="back-footer">
+                <span class="city">Москва</span>
+                <span class="website">Художник · Дизайнер</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
