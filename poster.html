@@ -6,7 +6,7 @@
     <title>Алексей Александров — 70 лет</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #ffffff;
+            background: #111;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -26,220 +26,277 @@
 
         .poster {
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             aspect-ratio: 3/4;
-            background: #ffffff;
-            border: 1px solid #e5e5e5;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             position: relative;
-        }
-
-        .poster-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .anniversary {
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #999;
-            margin-bottom: 16px;
-        }
-
-        .years {
-            font-size: 8rem;
-            font-weight: 700;
-            line-height: 1;
-            color: #111;
-            margin-bottom: 8px;
-        }
-
-        .years-label {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #666;
-            letter-spacing: 0.1em;
-        }
-
-        .poster-content {
-            flex: 1;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        /* Abstract art background elements */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+        }
+
+        .bg-shape-1 {
+            width: 400px;
+            height: 400px;
+            background: #e94560;
+            top: -100px;
+            right: -100px;
+        }
+
+        .bg-shape-2 {
+            width: 300px;
+            height: 300px;
+            background: #f39c12;
+            bottom: 20%;
+            left: -80px;
+        }
+
+        .bg-shape-3 {
+            width: 250px;
+            height: 250px;
+            background: #3498db;
+            bottom: -50px;
+            right: 20%;
+        }
+
+        .bg-shape-4 {
+            width: 200px;
+            height: 200px;
+            background: #9b59b6;
+            top: 40%;
+            right: 10%;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: auto;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .year-badge {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .main-content {
+            margin: auto 0;
             text-align: center;
+        }
+
+        .number {
+            font-size: 14rem;
+            font-weight: 900;
+            line-height: 0.85;
+            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .years-text {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 50px;
         }
 
         .name {
-            font-size: 3rem;
-            font-weight: 600;
+            font-size: 2.8rem;
+            font-weight: 700;
             letter-spacing: -0.02em;
-            color: #111;
-            margin-bottom: 24px;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
 
         .activities {
             display: flex;
-            gap: 48px;
-            margin-bottom: 48px;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
         }
 
         .activity {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 12px;
-        }
-
-        .activity-icon {
-            width: 80px;
-            height: 80px;
-            border: 2px solid #111;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .activity-icon svg {
-            width: 36px;
-            height: 36px;
-            stroke: #111;
-            fill: none;
-        }
-
-        .activity-label {
+            gap: 10px;
             font-size: 1.1rem;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #111;
         }
 
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: #ccc;
-            margin: 32px 0;
+        .activity-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
 
-        .description {
+        .activity-dot.art {
+            background: #e94560;
+            box-shadow: 0 0 20px #e94560;
+        }
+
+        .activity-dot.design {
+            background: #3498db;
+            box-shadow: 0 0 20px #3498db;
+        }
+
+        .subtitle {
             font-size: 1rem;
-            color: #666;
-            line-height: 1.8;
-            max-width: 500px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
         }
 
-        .poster-footer {
-            text-align: center;
+        .footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
             padding-top: 40px;
-            border-top: 1px solid #e5e5e5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .venue {
+            text-align: left;
         }
 
         .venue-label {
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            color: #999;
-            margin-bottom: 12px;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
         }
 
         .venue-address {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #111;
+            font-size: 0.95rem;
             line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .logo {
+            height: 50px;
+            opacity: 0.9;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
         }
 
         @media print {
             body {
                 padding: 0;
+                background: white;
             }
             .poster {
-                border: none;
                 max-width: none;
                 height: 100vh;
             }
         }
 
         @media (max-width: 600px) {
-            .poster {
-                padding: 32px;
+            .content {
+                padding: 30px;
             }
-            .years {
-                font-size: 5rem;
+            .number {
+                font-size: 8rem;
             }
             .name {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .activities {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .footer {
+                flex-direction: column;
                 gap: 24px;
+                align-items: center;
+                text-align: center;
             }
-            .activity-icon {
-                width: 60px;
-                height: 60px;
-            }
-            .activity-icon svg {
-                width: 28px;
-                height: 28px;
+            .venue {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="poster">
-        <div class="poster-header">
-            <p class="anniversary">Юбилейная выставка</p>
-            <p class="years">70</p>
-            <p class="years-label">лет</p>
-        </div>
+        <!-- Abstract background shapes -->
+        <div class="bg-shape bg-shape-1"></div>
+        <div class="bg-shape bg-shape-2"></div>
+        <div class="bg-shape bg-shape-3"></div>
+        <div class="bg-shape bg-shape-4"></div>
 
-        <div class="poster-content">
-            <h1 class="name">Алексей<br>Александров</h1>
-
-            <div class="activities">
-                <div class="activity">
-                    <div class="activity-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                    </div>
-                    <span class="activity-label">Арт</span>
-                </div>
-                <div class="activity">
-                    <div class="activity-icon">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <span class="activity-label">Дизайн</span>
-                </div>
+        <div class="content">
+            <div class="header">
+                <span class="badge">Юбилейная выставка</span>
+                <span class="year-badge">2026</span>
             </div>
 
-            <div class="divider"></div>
+            <div class="main-content">
+                <div class="number">70</div>
+                <div class="years-text">лет</div>
+                <h1 class="name">Алексей Александров</h1>
+                <div class="activities">
+                    <div class="activity">
+                        <span class="activity-dot art"></span>
+                        <span>Арт</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-dot design"></span>
+                        <span>Дизайн</span>
+                    </div>
+                </div>
+                <p class="subtitle">Художник · Дизайнер · Основатель Alexandrov Design House</p>
+            </div>
 
-            <p class="description">
-                Член Московского союза художников<br>
-                Член Союза дизайнеров России<br>
-                Основатель Alexandrov Design House
-            </p>
-        </div>
-
-        <div class="poster-footer">
-            <p class="venue-label">Место проведения</p>
-            <p class="venue-address">
-                ул. Ильинка, 4<br>
-                Москва, 109012
-            </p>
+            <div class="footer">
+                <div class="venue">
+                    <p class="venue-label">Место проведения</p>
+                    <p class="venue-address">
+                        ул. Ильинка, 4<br>
+                        Москва, 109012
+                    </p>
+                </div>
+                <div class="logo">
+                    <img src="images/logo-black.jpg" alt="Alexandrov Design House">
+                </div>
+            </div>
         </div>
     </div>
 </body>
