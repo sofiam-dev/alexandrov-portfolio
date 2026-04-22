@@ -77,10 +77,15 @@ img {
 }
 
 .logo {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    filter: invert(1);
 }
 
 .nav-links {
